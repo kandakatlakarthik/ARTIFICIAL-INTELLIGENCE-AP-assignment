@@ -1,0 +1,130 @@
+/* General Body and Reset Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to the bottom */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- Responsive Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 1.5rem;
+}
+
+.nav-branding {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem; /* Space between menu items */
+}
+
+.nav-link {
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #00bfff; /* Deep sky blue for hover */
+}
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* Media Query for mobile responsiveness */
+@media(max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Hide menu off-screen */
+        top: 70px; /* Position below navbar */
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Show menu */
+    }
+}
+
+
+/* --- Centered Content Section --- */
+.content-section {
+    flex-grow: 1; /* Allows this section to grow and push the footer down */
+    max-width: 960px; /* Maximum width of the content */
+    width: 90%;       /* Responsive width */
+    margin: 2rem auto; /* Top/bottom margin and auto left/right for centering */
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.content-section h1 {
+    color: #333;
+}
+
+
+/* --- Footer with Light Gray Background --- */
+.site-footer {
+    background-color: #f2f2f2; /* Light gray background */
+    color: #666;
+    text-align: center;
+    padding: 1.5rem 0;
+    width: 100%;
+}
